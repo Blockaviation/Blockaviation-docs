@@ -54,9 +54,9 @@ let api = kittn.authorize('meowmeowmeow');
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Blockaviation uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Blockaviation expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
@@ -64,26 +64,26 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Records
 
-## Get All Kittens
+## Get All Records
 
 ```ruby
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+api.recrods.get
 ```
 
 ```python
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+api.recrods.get()
 ```
 
 ```shell
-curl "http://example.com/api/kittens"
+curl "http://example.com/api/recrods"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -91,7 +91,7 @@ curl "http://example.com/api/kittens"
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+let recrods = api.recrods.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -115,41 +115,41 @@ let kittens = api.kittens.get();
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all Records.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://example.com/api/records`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+available | true | If set to false, the result will include recrods that have already been adopted.
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — a happy record is an authenticated record!
 </aside>
 
-## Get a Specific Kitten
+## Get a Specific Record
 
 ```ruby
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
+api.recrods.get(2)
 ```
 
 ```python
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
+api.recrods.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "http://example.com/api/recrods/2"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -157,7 +157,7 @@ curl "http://example.com/api/kittens/2"
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+let max = api.recrods.get(2);
 ```
 
 > The above command returns JSON structured like this:
@@ -172,38 +172,38 @@ let max = api.kittens.get(2);
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint retrieves a specific record.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://example.com/records/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+ID | The ID of the record to retrieve
 
-## Delete a Specific Kitten
+## Delete a Specific Record
 
 ```ruby
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
+api.recrods.delete(2)
 ```
 
 ```python
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
+api.recrods.delete(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "http://example.com/api/recrods/2"
   -X DELETE
   -H "Authorization: meowmeowmeow"
 ```
@@ -212,7 +212,7 @@ curl "http://example.com/api/kittens/2"
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
+let max = api.recrods.delete(2);
 ```
 
 > The above command returns JSON structured like this:
@@ -224,14 +224,14 @@ let max = api.kittens.delete(2);
 }
 ```
 
-This endpoint deletes a specific kitten.
+This endpoint deletes a specific record.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`DELETE http://example.com/recrods/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to delete
+ID | The ID of the record to delete
