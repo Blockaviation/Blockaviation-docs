@@ -9,7 +9,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+
 
 includes:
   - errors
@@ -19,7 +19,7 @@ search: true
 
 # Introduction
 
-Welcome to the Blockaviation API! You can use our API to access the Blockaviation API endpoints, which can allow you to search retrieve and prove authenticity of aircraft records.
+Welcome to the <b>Blockaviation API!</b> You can use our API to access the Blockaviation API endpoints, which can allow you to search, retrieve authenticated aircraft records for your application.
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
@@ -29,15 +29,15 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 > To authorize, use this code:
 
 ```ruby
-require 'kittn'
+require 'blockav'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = Blockav::APIClient.authorize!('meowmeowmeow')
 ```
 
 ```python
-import kittn
+import blockav
 
-api = kittn.authorize('meowmeowmeow')
+api = blockav.authorize('meowmeowmeow')
 ```
 
 ```shell
@@ -47,14 +47,14 @@ curl "api_endpoint_here"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const blockav = require('blockav');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = blockav.authorize('meowmeowmeow');
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Blockaviation uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Blockaviation uses API keys to allow access to the API. You can register a new Blockav API key at our [developer portal](http://example.com/developers).
 
 Blockaviation expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
@@ -69,29 +69,29 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 ## Get All Records
 
 ```ruby
-require 'kittn'
+require 'blockav'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.recrods.get
+api = Blockav::APIClient.authorize!('meowmeowmeow')
+api.records.get
 ```
 
 ```python
-import kittn
+import blockav
 
-api = kittn.authorize('meowmeowmeow')
-api.recrods.get()
+api = blockav.authorize('meowmeowmeow')
+api.records.get()
 ```
 
 ```shell
-curl "http://example.com/api/recrods"
+curl "http://example.com/api/records"
   -H "Authorization: meowmeowmeow"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const blockav = require('blockav');
 
-let api = kittn.authorize('meowmeowmeow');
-let recrods = api.recrods.get();
+let api = blockav.authorize('meowmeowmeow');
+let records = api.records.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -100,17 +100,17 @@ let recrods = api.recrods.get();
 [
   {
     "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "partNumber": "143T6300",
+    "manufacturerCode": "81205",
+    "airlineSerialNumber": "000984",
+    "lifeLimitPartIndicator": true
   },
   {
     "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "partNumber": "157T9300",
+    "manufacturerCode": "81485",
+    "airlineSerialNumber": "000344",
+    "lifeLimitPartIndicator": true
   }
 ]
 ```
@@ -126,7 +126,7 @@ This endpoint retrieves all Records.
 Parameter | Default | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include recrods that have already been adopted.
+available | true | If set to false, the result will include records that have already been adopted.
 
 <aside class="success">
 Remember — a happy record is an authenticated record!
@@ -135,29 +135,29 @@ Remember — a happy record is an authenticated record!
 ## Get a Specific Record
 
 ```ruby
-require 'kittn'
+require 'blockav'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.recrods.get(2)
+api = Blockav::APIClient.authorize!('meowmeowmeow')
+api.records.get(2)
 ```
 
 ```python
-import kittn
+import blockav
 
-api = kittn.authorize('meowmeowmeow')
-api.recrods.get(2)
+api = blockav.authorize('meowmeowmeow')
+api.records.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/recrods/2"
+curl "http://example.com/api/records/2"
   -H "Authorization: meowmeowmeow"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const blockav = require('blockav');
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.recrods.get(2);
+let api = blockav.authorize('meowmeowmeow');
+let max = api.records.get(2);
 ```
 
 > The above command returns JSON structured like this:
@@ -165,10 +165,10 @@ let max = api.recrods.get(2);
 ```json
 {
   "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "partNumber": "157T9300",
+  "manufacturerCode": "81485",
+  "airlineSerialNumber": "000344",
+  "lifeLimitPartIndicator": true
 }
 ```
 
@@ -189,30 +189,30 @@ ID | The ID of the record to retrieve
 ## Delete a Specific Record
 
 ```ruby
-require 'kittn'
+require 'blockav'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.recrods.delete(2)
+api = Blockav::APIClient.authorize!('meowmeowmeow')
+api.records.delete(2)
 ```
 
 ```python
-import kittn
+import blockav
 
-api = kittn.authorize('meowmeowmeow')
-api.recrods.delete(2)
+api = blockav.authorize('meowmeowmeow')
+api.records.delete(2)
 ```
 
 ```shell
-curl "http://example.com/api/recrods/2"
+curl "http://example.com/api/records/2"
   -X DELETE
   -H "Authorization: meowmeowmeow"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const blockav = require('blockav');
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.recrods.delete(2);
+let api = blockav.authorize('meowmeowmeow');
+let max = api.records.delete(2);
 ```
 
 > The above command returns JSON structured like this:
@@ -228,7 +228,7 @@ This endpoint deletes a specific record.
 
 ### HTTP Request
 
-`DELETE http://example.com/recrods/<ID>`
+`DELETE http://example.com/records/<ID>`
 
 ### URL Parameters
 
