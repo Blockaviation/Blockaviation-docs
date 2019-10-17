@@ -3,8 +3,8 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
+  #- ruby
+  #- python
   - javascript
 
 toc_footers:
@@ -21,14 +21,14 @@ search: true
 
 Welcome to the <b>Blockaviation API!</b> You can use our API to access the Blockaviation API endpoints, which can allow you to search, retrieve authenticated aircraft records for your application.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in Shell and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
+<!-- ```ruby
 require 'blockav'
 
 api = Blockav::APIClient.authorize!('meowmeowmeow')
@@ -38,7 +38,7 @@ api = Blockav::APIClient.authorize!('meowmeowmeow')
 import blockav
 
 api = blockav.authorize('meowmeowmeow')
-```
+``` -->
 
 ```shell
 # With shell, you can just pass the correct header with each request
@@ -47,7 +47,7 @@ curl "api_endpoint_here"
 ```
 
 ```javascript
-const blockav = require('blockav');
+const blockav = require('blockaviation');
 
 let api = blockav.authorize('meowmeowmeow');
 ```
@@ -68,7 +68,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 ## Get All Records
 
-```ruby
+<!-- ```ruby
 require 'blockav'
 
 api = Blockav::APIClient.authorize!('meowmeowmeow')
@@ -80,7 +80,7 @@ import blockav
 
 api = blockav.authorize('meowmeowmeow')
 api.records.get()
-```
+``` -->
 
 ```shell
 curl "http://example.com/api/records"
@@ -88,7 +88,7 @@ curl "http://example.com/api/records"
 ```
 
 ```javascript
-const blockav = require('blockav');
+const blockav = require('blockaviation');
 
 let api = blockav.authorize('meowmeowmeow');
 let records = api.records.get();
@@ -134,7 +134,7 @@ Remember — a happy record is an authenticated record!
 
 ## Get a Specific Record
 
-```ruby
+<!-- ```ruby
 require 'blockav'
 
 api = Blockav::APIClient.authorize!('meowmeowmeow')
@@ -146,7 +146,7 @@ import blockav
 
 api = blockav.authorize('meowmeowmeow')
 api.records.get(2)
-```
+``` -->
 
 ```shell
 curl "http://example.com/api/records/2"
@@ -154,7 +154,7 @@ curl "http://example.com/api/records/2"
 ```
 
 ```javascript
-const blockav = require('blockav');
+const blockav = require('blockaviation');
 
 let api = blockav.authorize('meowmeowmeow');
 let max = api.records.get(2);
@@ -188,7 +188,7 @@ ID | The ID of the record to retrieve
 
 ## Delete a Specific Record
 
-```ruby
+<!-- ```ruby
 require 'blockav'
 
 api = Blockav::APIClient.authorize!('meowmeowmeow')
@@ -200,7 +200,7 @@ import blockav
 
 api = blockav.authorize('meowmeowmeow')
 api.records.delete(2)
-```
+``` -->
 
 ```shell
 curl "http://example.com/api/records/2"
@@ -209,7 +209,7 @@ curl "http://example.com/api/records/2"
 ```
 
 ```javascript
-const blockav = require('blockav');
+const blockav = require('blockaviation');
 
 let api = blockav.authorize('meowmeowmeow');
 let max = api.records.delete(2);
