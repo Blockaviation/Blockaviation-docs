@@ -8,7 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://blockaviation.com/register/'>Sign Up for a Developer Key</a>
 
 
 includes:
@@ -59,7 +59,7 @@ let api = blockav.authorize('PrepareForTakeOff');
 
 > Make sure to replace `PrepareForTakeOff` with your API key.
 
-Blockaviation uses API keys to allow access to the API. You can register a new Blockaviation API key at our [developer portal](http://example.com/developers).
+Blockaviation uses API keys to allow access to the API. You can register a new Blockaviation API key at our [developer portal](https://blockaviation.com/register/).
 
 Blockaviation expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
